@@ -75,11 +75,11 @@ async def create_tts(req: TTSRequest):
                 "sample_rate": req.sample_rate,
                 "speech_rate": req.speech_rate,
             },
-            "additions": {
+            "additions": json.dumps({
                 "context_texts": [
                     "请像一位真实的电台女主播，在清晨自然地和熟悉的朋友聊天。声音温柔、亲切、松弛，有自然的语气起伏和轻微停顿。不要使用新闻播音腔，不要刻意甜美，不要每个字都用力。"
                 ]
-            },
+            }, ensure_ascii=False),
         }
     }
 
